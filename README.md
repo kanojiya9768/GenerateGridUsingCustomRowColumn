@@ -1,7 +1,5 @@
 # GenerateGridUsingCustomRowColumn
 
-https://unrivaled-florentine-79638e.netlify.app/
-
 
 1.>Enter Row 
 
