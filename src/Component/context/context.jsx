@@ -10,7 +10,9 @@ const intialValue = {
     column : 0,
     totalBoxes : 0,
     showBoxes : false,
+    diagColor : "#150220"
 }
+
 const ContextProvider = ({children}) =>{
 
 
