@@ -1,9 +1,11 @@
-import React, { memo, useRef } from 'react'
+import React, { memo, useRef, useState } from 'react'
 import { useMyContext } from '../context/context';
 import Generate from './Generate';
 import './css/Box.css'
 
 function Input() {
+
+    const [ColorInput, setColorInput] = useState(false);
 
     const { state, dispatch } = useMyContext();
 
@@ -23,7 +25,9 @@ function Input() {
             <form onSubmit={HandleSubmit}>
                 <input type="number" ref={rows} placeholder='Enter Rows' required max={10} />
                 <input type="number" ref={columns} placeholder='Enter columns' required max={10} />
-                <input type="submit" value="SUBMIT" />
+                <input type="button" onClick={() => setColorInput(true)} value={"Go"} />
+                {ColorInput ? <input type="color" name="color" id="color" onChange={(e) => dispatch({ type: 'SET_COLOR', payload: e.target.value })} required /> : ''}
+                {ColorInput ? <input type="submit" value="SUBMIT" /> : ''}
             </form>
 
             {/* //generate boxes here  */}
