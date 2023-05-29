@@ -6,11 +6,14 @@ const reducer = (state, action) => {
                 row: +(action.payload.rows),
                 column: +(action.payload.columns),
                 totalBoxes: (+action.payload.rows) * +(+action.payload.columns),
-                showBoxes : true,
+                showBoxes: true,
             }
             break;
+        case 'SET_COLOR':
+            return { ...state, diagColor: action.payload }
+            break;
         default:
-            return {...state}
+            return { ...state }
     }
 }
 
